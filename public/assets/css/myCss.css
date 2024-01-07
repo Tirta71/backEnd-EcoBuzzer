@@ -1,0 +1,27 @@
+.container-viewUser {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.userCard {
+    border: 1px solid whitesmoke;
+    box-shadow: 10px 10px 13px -14px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 13px -14px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 13px -14px rgba(0, 0, 0, 0.75);
+    width: 50%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.userCard h3 {
+    border-bottom: 1px solid whitesmoke;
+    padding: 1rem;
+}
+
+.ValueCardUser {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 1rem 0px 1rem;
+}
