@@ -36,4 +36,20 @@ class ApiLokasiController extends Controller
             'data' => $lokasi
         ],200);
     }
+    public function prosesTambahLokasi(Request $request)
+    {
+        $request->validate([
+            'Kota' => 'required|string|max:255',
+            'Provinsi' => 'required|string|max:255',          
+        ]);
+
+        $lokasi = new Lokasi([
+            'Kota' => $request->input('Kota'),
+            'Provinsi' => $request->input('Provinsi'),
+        ]);
+
+        $lokasi->save();
+
+        return response()->json(['message' => 'Location added successfully', 'data' => $lokasi], 201);
+    }
 }

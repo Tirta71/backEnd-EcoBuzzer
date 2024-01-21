@@ -118,6 +118,34 @@ class AuthApiController extends Controller
         ],200);
     }
 
+       public function edit(Request $request, $UserID)
+    {
+
+        $request->validate([
+            'Nama' => 'required|string',
+            'Email' => 'required',
+            'NomorTelepon' => 'required|string',
+            'Alamat' => 'required|string',
+            'Kota' => 'required|string',
+            'Provinsi' => 'required|string',
+            'KodePos' => 'required|string',
+         
+        ]);
+
+      
+        $user = User::find($UserID);
+
+      
+        if (!$user) {
+            return response()->json(['message' => 'Pengguna tidak ditemukan'], 404);
+        }
+
+       
+        $user->update($request->all());
+
+        return response()->json(['message' => 'Data pengguna berhasil diperbarui']);
+    }
+
   
     
     
